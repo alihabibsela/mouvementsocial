@@ -1,0 +1,5 @@
+[09-Apr-2021 06:02:09 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/mouvementsocial/public_html/index.php on line 49
+[09-Apr-2021 06:02:26 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/mouvementsocial/public_html/index.php on line 49
+[09-Apr-2021 06:05:22 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/mouvementsocial/public_html/index.php on line 49
+[09-Apr-2021 06:06:50 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/mouvementsocial/public_html/index.php on line 49
+[09-Apr-2021 06:07:14 UTC] PHP Fatal error:  Declaration of Illuminate\Container\Container::get($id) must be compatible with Psr\Container\ContainerInterface::get(string $id) in /home/mouvementsocial/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 15

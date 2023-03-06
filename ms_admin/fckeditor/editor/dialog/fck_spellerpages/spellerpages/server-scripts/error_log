@@ -1,0 +1,1 @@
+[27-Dec-2017 14:16:12 Asia/Beirut] PHP Warning:  shell_exec() has been disabled for security reasons in /home/provideomegastor/public_html/beta/provideo_admin/fckeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.php on line 104

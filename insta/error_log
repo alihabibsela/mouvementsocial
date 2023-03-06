@@ -1,0 +1,14 @@
+[20-Apr-2021 09:49:26 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/mouvementsocial/public_html/insta/index.php on line 6
+[20-Apr-2021 09:49:26 UTC] PHP Warning:  file_get_contents(https://www.instagram.com/my.oras): failed to open stream: no suitable wrapper could be found in /home/mouvementsocial/public_html/insta/index.php on line 6
+[20-Apr-2021 09:49:30 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/mouvementsocial/public_html/insta/index.php on line 6
+[20-Apr-2021 09:49:30 UTC] PHP Warning:  file_get_contents(https://www.instagram.com/my.oras): failed to open stream: no suitable wrapper could be found in /home/mouvementsocial/public_html/insta/index.php on line 6
+[20-Apr-2021 09:50:07 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/mouvementsocial/public_html/insta/index.php on line 7
+[20-Apr-2021 09:50:07 UTC] PHP Warning:  file_get_contents(https://www.instagram.com/my.oras): failed to open stream: no suitable wrapper could be found in /home/mouvementsocial/public_html/insta/index.php on line 7
+[20-Apr-2021 09:50:46 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/mouvementsocial/public_html/insta/index.php on line 7
+[20-Apr-2021 09:50:46 UTC] PHP Warning:  file_get_contents(https://www.instagram.com/my.oras): failed to open stream: no suitable wrapper could be found in /home/mouvementsocial/public_html/insta/index.php on line 7
+[20-Apr-2021 09:50:50 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/mouvementsocial/public_html/insta/index.php on line 7
+[20-Apr-2021 09:50:50 UTC] PHP Warning:  file_get_contents(https://www.instagram.com/my.oras): failed to open stream: no suitable wrapper could be found in /home/mouvementsocial/public_html/insta/index.php on line 7
+[20-Apr-2021 09:51:05 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/mouvementsocial/public_html/insta/index.php on line 7
+[20-Apr-2021 09:51:05 UTC] PHP Warning:  file_get_contents(https://www.instagram.com/my.oras): failed to open stream: no suitable wrapper could be found in /home/mouvementsocial/public_html/insta/index.php on line 7
+[20-Apr-2021 09:51:25 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/mouvementsocial/public_html/insta/index.php on line 7
+[20-Apr-2021 09:51:25 UTC] PHP Warning:  file_get_contents(https://www.instagram.com/my.oras/channel/?__a=1): failed to open stream: no suitable wrapper could be found in /home/mouvementsocial/public_html/insta/index.php on line 7

@@ -1,0 +1,126 @@
+body {
+    direction: rtl;
+}
+.float-left {
+    float: right!important;
+}
+.footer-widget__newsletter input {
+    border-bottom-left-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-right-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    padding-right: 18px;
+    padding-left: 0px;
+}
+.thm-btn {
+    border-bottom-left-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 16.5px 17.5px;
+}
+.footer-widget__newsletter p {
+    margin-top: -10px;
+}
+.about-counter__text {
+    text-align: right;
+}
+.footer-widget__about p {
+    text-align: right;
+}
+.list-unstyled {
+    text-align: right;
+}
+.footer-widget__contact li a > i {
+    right: -22px;
+}
+.main-menu .main-menu__list > li > a::after, .stricky-header .main-menu__list > li > a::after {
+    margin-right: 5px;
+    margin-left: unset;
+}
+.main-header__social a {
+    margin-left: 30px;
+}
+
+.cause-details__content{
+    text-align: right;
+}
+.block-title h3 {
+    text-align: right;
+    font-size: 36px;
+}
+.ul-list-one li::before {
+    right: -37px;
+    left: unset;
+}
+.blog-details__title {
+    text-align: right;
+}
+.footer-social a + a {
+    margin-right: 10px;
+}
+.form-one input[type=text], .form-one input[type=email], .form-one textarea {
+    padding-right: 30px;
+    padding-left: unset;
+}
+.headline {
+    text-align: right;
+}
+.main-menu .main-menu__list > li + li, .stricky-header .main-menu__list > li + li {
+    margin-right: 35px;
+    margin-left: unset;
+}
+
+.form-one input[type=text], .form-one input[type=email], .form-one textarea, .form-one select {
+    padding-right: 30px;
+    padding-left: unset;
+}
+
+.contact-page__content .block-text {
+    text-align: right;
+}
+.NewsSection .blg-thmb .imageContainer{
+    overflow: hidden !important;
+}
+.mobile-nav__contact.list-unstyled {
+    padding-right: 0;
+    padding-left: unset;
+}
+.mobile-nav__contact li > i {
+    margin-left: 10px;
+    margin-right: unset;
+}
+.mobile-nav__language img {
+    margin-left: 10px;
+    margin-right: unset;
+}
+.mobile-nav__social a + a {
+    margin-right: 10px;
+    margin-left: unset;
+}
+.logo-box a{
+    text-align: initial;
+}
+.mobile-nav__close {
+    left: 15px;
+    right: unset;
+}
+.ceo-msg {
+    padding: 0px;
+}
+.site-footer .main-footer p{
+    text-align: right;
+}
+
+@media(max-width:700px){
+    .contact-card-carousel .swiper-wrapper{
+        justify-content: unset !important;
+    }
+}
+
+.news-section .blog-card__content h3,.news-section .blog-card__content p{
+    text-align: center;
+}
+.MainLabel{
+    text-align: right;
+}

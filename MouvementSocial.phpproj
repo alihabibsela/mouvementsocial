@@ -1,0 +1,18 @@
+﻿<Project Sdk="Devsense.Php.Sdk">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>909e745a-fbbd-4721-9b94-12ff31b43c20</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnvName>PHPDev</EnvName>
+    <RootNamespace>MouvementSocial</RootNamespace>
+    <WebRoot />
+    <RuntimeVersion>7.2</RuntimeVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="content\uploads\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="storage\framework\sessions\" />
+    <Folder Include="storage\framework\views\" />
+  </ItemGroup>
+</Project>
