@@ -15,7 +15,7 @@ $file_fr=file_uploader("file_fr", $fileTypes, $filesPath);
 
 
 
-$return = Finance_statement::save( addslashes($finance_statement_id),  addslashes($year),  addslashes($file_an),  addslashes($file_en),  addslashes($file_fr));
+$return = Finance_statement::save( addslashes($finance_statement_id),  addslashes($year),  addslashes($file_an),  addslashes($file_en),  addslashes($file_fr),  addslashes($finance_id));
 	if($return == true){
 		$act=1;
 	}else{

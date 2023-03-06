@@ -1,4 +1,4 @@
-<?php
+<?php 
  require "session_start.php";
 include "class/Publication.php";
 function main(){
@@ -10,9 +10,11 @@ $publication = Publication::selectById($id);
 <script language="javascript" src="javascript/publication_validation.js"></script>
 
 
+<script language="JavaScript" type="text/javascript" src="javascript/pop_up.js"></script>
+<script language="JavaScript" type="text/javascript" src="javascript/delete_file_confirmation.js"></script>
 <div class="portlet box green">
 	<div class="portlet-title">
-		<div class="caption"><i class="fa fa-reorder"></i>Edit MS Library</div>
+		<div class="caption"><i class="fa fa-reorder"></i>Edit Publication</div>
 	</div>
 	<div class="portlet-body form">
 	<form action="update_publication.php" method="post" enctype="multipart/form-data" name="frm" id="frm"  class="form-horizontal form-bordered" >
@@ -45,22 +47,22 @@ $publication = Publication::selectById($id);
 		<div class="col-md-3">
 			<input     name="title_ar" type="text"  class="form-control" id="title_ar" value="<?php echo stripslashes($publication->title_ar)?>" placeholder="Enter Title ar">
 		</div>
-	</div>
-
+	</div>	
+		
 	<div class="form-group">
 		<label class="col-md-3 control-label">Title en</label>
 		<div class="col-md-3">
 			<input     name="title_en" type="text"  class="form-control" id="title_en" value="<?php echo stripslashes($publication->title_en)?>" placeholder="Enter Title en">
 		</div>
-	</div>
-
+	</div>	
+		
 	<div class="form-group">
 		<label class="col-md-3 control-label">Title fr</label>
 		<div class="col-md-3">
 			<input     name="title_fr" type="text"  class="form-control" id="title_fr" value="<?php echo stripslashes($publication->title_fr)?>" placeholder="Enter Title fr">
 		</div>
-	</div>
-
+	</div>	
+		
 	<div class="form-group">
       <label class="col-md-3 control-label">Details ar</label>
       	<div class="form-group">
@@ -72,8 +74,8 @@ $publication = Publication::selectById($id);
 			$fck->Create ();
 	      	?>
 		</div>
-    </div>
-
+    </div>	
+		
 	<div class="form-group">
       <label class="col-md-3 control-label">Details en</label>
       	<div class="form-group">
@@ -85,8 +87,8 @@ $publication = Publication::selectById($id);
 			$fck->Create ();
 	      	?>
 		</div>
-    </div>
-
+    </div>	
+		
 	<div class="form-group">
       <label class="col-md-3 control-label">Details fr</label>
       	<div class="form-group">
@@ -98,8 +100,8 @@ $publication = Publication::selectById($id);
 			$fck->Create ();
 	      	?>
 		</div>
-    </div>
-
+    </div>	
+		
 	<div class="form-group">
       <label class="col-md-3 control-label">File ar</label>
 	  <div class="controls col-md-9">
@@ -117,9 +119,9 @@ $publication = Publication::selectById($id);
 			  	<div>&nbsp;&nbsp;<a href="<?php echo $filesPath.$publication->file_ar?>" target="_blank">[ View File ]</a>&nbsp;&nbsp;<a href="javascript:delete_file_confirmation('delete_publication_file.php?id=<?php echo $_REQUEST["id"];?>&field=file_ar')">[ Delete File]</a></div>
 			<?php }?>
 		</div>
-    </div>
-
-
+    </div>	
+		
+		
 	<div class="form-group">
       <label class="col-md-3 control-label">File en</label>
 	  <div class="controls col-md-9">
@@ -137,9 +139,9 @@ $publication = Publication::selectById($id);
 			  	<div>&nbsp;&nbsp;<a href="<?php echo $filesPath.$publication->file_en?>" target="_blank">[ View File ]</a>&nbsp;&nbsp;<a href="javascript:delete_file_confirmation('delete_publication_file.php?id=<?php echo $_REQUEST["id"];?>&field=file_en')">[ Delete File]</a></div>
 			<?php }?>
 		</div>
-    </div>
-
-
+    </div>	
+		
+		
 	<div class="form-group">
       <label class="col-md-3 control-label">File fr</label>
 	  <div class="controls col-md-9">
@@ -157,15 +159,35 @@ $publication = Publication::selectById($id);
 			  	<div>&nbsp;&nbsp;<a href="<?php echo $filesPath.$publication->file_fr?>" target="_blank">[ View File ]</a>&nbsp;&nbsp;<a href="javascript:delete_file_confirmation('delete_publication_file.php?id=<?php echo $_REQUEST["id"];?>&field=file_fr')">[ Delete File]</a></div>
 			<?php }?>
 		</div>
-    </div>
-
-
+    </div>			
+		
+	<div class="form-group">
+		<label class="control-label col-md-3">Publication category id</label>
+		<div class="col-md-4">
+			<select     class="form-control select2me" data-placeholder="Select..." name="publication_category_id" id="publication_category_id">
+			<option selected="selected" value="0">--- Select Publication category id ---</option>
+			<?php
+			$sql="select * from publication";
+			$result=mysqli_query ($_SESSION["db_conn"], $sql);
+			while($publication=mysqli_fetch_object($result)){
+				if($publication->publication_category_id==$publication->publication_category_id)
+					$sel="Selected";
+						else
+					$sel="";	
+				?>
+				<option value="<?php echo $publication->publication_category_id?>" <?php echo $sel?>><?php echo $publication->title_en?></option>
+		   	<?php }?>
+			</select>
+		</div>
+	</div>		
+		
+		
 <br/>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="col-md-offset-3 col-md-9">
 					<button type="submit" class="btn green"><i class="fa fa-check"></i> Submit</button>
-					<button type="button" class="btn default"  onclick="javascript:if(confirm('Are you sure you want to leave this page?')) history.back()">Cancel</button>
+					<button type="button" class="btn default"  onclick="javascript:if(confirm('Are you sure you want to leave this page?')) history.back()">Cancel</button>                              
 				</div>
 			</div>
 		</div>

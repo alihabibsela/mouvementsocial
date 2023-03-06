@@ -1,4 +1,4 @@
-<?php
+<?php 
  require "session_start.php";
 include "class/Finance.php";
 function main(){

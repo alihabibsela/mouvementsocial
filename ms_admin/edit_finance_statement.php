@@ -85,6 +85,27 @@ $finance_statement = Finance_statement::selectById($id);
     </div>	
 		
 		
+	<div class="form-group">
+		<label class="control-label col-md-3">Finance id</label>
+		<div class="col-md-4">
+			<select     class="form-control select2me" data-placeholder="Select..." name="finance_id" id="finance_id">
+			<option selected="selected" value="0">--- Select Finance id ---</option>
+			<?php
+			$sql="select * from finance";
+			$result=mysqli_query ($_SESSION["db_conn"], $sql);
+			while($finance=mysqli_fetch_object($result)){
+				if($finance->finance_id==$finance_statement->finance_id)
+					$sel="Selected";
+						else
+					$sel="";	
+				?>
+				<option value="<?php echo $finance->finance_id?>" <?php echo $sel?>><?php echo $finance->title_en?></option>
+		   	<?php }?>
+			</select>
+		</div>
+	</div>		
+		
+		
 <br/>
 		<div class="row">
 			<div class="col-md-12">

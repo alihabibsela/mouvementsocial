@@ -1,4 +1,4 @@
-<?php
+<?php 
 include "class/Publication.php";
 function main(){
 $orderBy = "desc";
@@ -33,12 +33,12 @@ $records = Publication::select($condition);
 ?><div class="portlet box blue">
 	<div class="portlet-title">
 		<div class="caption">
-				<i class="fa fa-globe"></i>MS Library MANAGEMENT
+				<i class="fa fa-globe"></i>PUBLICATION MANAGEMENT
 				<!--
 				<form name="myform223" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 					<div>
-						Search by title ar:
-						<input type="text" value="<?php echo $keywords ?>" name="keywords" id="keywords" style="width:300px; height:20px;"> &nbsp;
+						Search by title ar: 
+						<input type="text" value="<?php echo $keywords ?>" name="keywords" id="keywords" style="width:300px; height:20px;"> &nbsp; 
 						<input type="submit" style="" value="   Search   " />
 					</div>
 				</form>
@@ -58,7 +58,7 @@ $records = Publication::select($condition);
 				<a id="sample_editable_1_new" class="btn green" href="new_publication.php">
 				Add New <i class="fa fa-plus"></i>
 				</a>
-			</div>
+			</div>						
 		</div>
 	</div>
 	<div class="portlet-body">
@@ -80,8 +80,8 @@ $records = Publication::select($condition);
 				</tr>
 			</thead>
 			<tbody>
-
-	<?php
+			
+	<?php 
  	 	for($rc=0;$rc<count($records);$rc++){
   		$publication = $records[$rc];
 	?>
@@ -101,7 +101,7 @@ $records = Publication::select($condition);
 						<a class="btn btn-xs yellow" href="edit_publication.php?id=<?php echo $publication->publication_id?>">
 						Edit
 						<i class="fa fa-edit"></i>
-						</a>
+						</a>			
 					</td>
 					<td>
 						<a class="btn btn-xs red" href="javascript:deleteAjax('publication', '<?php echo $publication->publication_id;?>')">
@@ -110,7 +110,7 @@ $records = Publication::select($condition);
 						</a>
 					</td>
 				</tr>
-	<?php
+	<?php  
 		  $c++;
 		  $i++;
 	  	}
@@ -119,4 +119,4 @@ $records = Publication::select($condition);
 		</table>
 	</div>
 </div>
-<?php  }include "template.php";?>
+<?php  }include "template.php";?>					

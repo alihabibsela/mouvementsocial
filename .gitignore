@@ -13,3 +13,4 @@ npm-debug.log
 yarn-error.log
 /content/uploads/images
 /content/uploads/files
+.DS_Store

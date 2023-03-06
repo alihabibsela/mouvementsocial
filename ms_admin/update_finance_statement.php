@@ -49,7 +49,7 @@ if($return) $num++;
 
 
 
-$query = "year='".addslashes(stripslashes($year))."' ";
+$query = "year='".addslashes(stripslashes($year))."' ,finance_id='".addslashes(stripslashes($finance_id))."' ";
 
 $return=Finance_statement::updateCondition($finance_statement_id, $query);
 if($return) $num++;

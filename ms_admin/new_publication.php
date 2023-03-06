@@ -3,9 +3,10 @@
 
 
 
+		
 <div class="portlet box green">
 	<div class="portlet-title">
-		<div class="caption"><i class="fa fa-reorder"></i>Create MS Library</div>
+		<div class="caption"><i class="fa fa-reorder"></i>Create Publication</div>
 	</div>
 	<div class="portlet-body form">
 	<form action="insert_publication.php" method="post" enctype="multipart/form-data" name="frm" id="frm"  class="form-horizontal form-bordered" >
@@ -55,7 +56,7 @@
 	      	$fck = new FCKeditor ( "details_ar");
 			$fck->BasePath = "fckeditor/";
 			$fck->Value = "";
-			$fck->Config["EnterMode"] = "br";
+			$fck->Config["EnterMode"] = "br"; 
 			$fck->Create ();
 	      ?>
 		</div>
@@ -67,7 +68,7 @@
 	      	$fck = new FCKeditor ( "details_en");
 			$fck->BasePath = "fckeditor/";
 			$fck->Value = "";
-			$fck->Config["EnterMode"] = "br";
+			$fck->Config["EnterMode"] = "br"; 
 			$fck->Create ();
 	      ?>
 		</div>
@@ -79,7 +80,7 @@
 	      	$fck = new FCKeditor ( "details_fr");
 			$fck->BasePath = "fckeditor/";
 			$fck->Value = "";
-			$fck->Config["EnterMode"] = "br";
+			$fck->Config["EnterMode"] = "br"; 
 			$fck->Create ();
 	      ?>
 		</div>
@@ -91,7 +92,7 @@
 				<div class="input-group">
 					<span class="input-group-btn">
 					<span class="uneditable-input">
-					<i class="fa fa-file fileupload-exists"></i>
+					<i class="fa fa-file fileupload-exists"></i> 
 					<span class="fileupload-preview"></span>
 					</span>
 					</span>
@@ -112,7 +113,7 @@
 				<div class="input-group">
 					<span class="input-group-btn">
 					<span class="uneditable-input">
-					<i class="fa fa-file fileupload-exists"></i>
+					<i class="fa fa-file fileupload-exists"></i> 
 					<span class="fileupload-preview"></span>
 					</span>
 					</span>
@@ -133,7 +134,7 @@
 				<div class="input-group">
 					<span class="input-group-btn">
 					<span class="uneditable-input">
-					<i class="fa fa-file fileupload-exists"></i>
+					<i class="fa fa-file fileupload-exists"></i> 
 					<span class="fileupload-preview"></span>
 					</span>
 					</span>
@@ -147,13 +148,27 @@
 			</div>
 		</div>
     </div>
+	<div class="form-group">
+		<label class="control-label col-md-3">Publication category id</label>
+		<div class="col-md-4">
+			<select    class="form-control select2me" data-placeholder="Select..." name="publication_category_id" id="publication_category_id">
+			<option selected="selected" value="0">--- Select Publication category id ---</option>
+			<?php
+			$sql="select * from publication";
+			$result=mysqli_query ($_SESSION["db_conn"], $sql);
+			while($publication=mysqli_fetch_array($result)){?>
+			<option value="<?php echo $publication['publication_category_id']?>"><?php echo $publication["title_en"]?></option>
+		   	<?php }?>
+			</select>
+		</div>
+	</div>
 
 		<br/>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="col-md-offset-3 col-md-9">
 					<button type="submit" class="btn green"><i class="fa fa-check"></i> Submit</button>
-					<button type="button" class="btn default"  onclick="javascript:if(confirm('Are you sure you want to leave this page?')) history.back()">Cancel</button>
+					<button type="button" class="btn default"  onclick="javascript:if(confirm('Are you sure you want to leave this page?')) history.back()">Cancel</button>                              
 				</div>
 			</div>
 		</div>

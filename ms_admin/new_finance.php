@@ -2,7 +2,7 @@
 
 
 
-
+		
 <div class="portlet box green">
 	<div class="portlet-title">
 		<div class="caption"><i class="fa fa-reorder"></i>Create Finance</div>
@@ -10,10 +10,10 @@
 	<div class="portlet-body form">
 	<form action="insert_finance.php" method="post" enctype="multipart/form-data" name="frm" id="frm"  class="form-horizontal form-bordered" >
 	<div class="form-body">
-
+				
 
 	<div class="form-group">
-		<label class="col-md-3 control-label">Image (470 x 338)</label>
+		<label class="col-md-3 control-label">Image</label>
 		<div class="col-md-9">
 			<div class="fileupload fileupload-new" data-provides="fileupload">
 				<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
@@ -61,7 +61,7 @@
 			<div class="col-md-12">
 				<div class="col-md-offset-3 col-md-9">
 					<button type="submit" class="btn green"><i class="fa fa-check"></i> Submit</button>
-					<button type="button" class="btn default"  onclick="javascript:if(confirm('Are you sure you want to leave this page?')) history.back()">Cancel</button>
+					<button type="button" class="btn default"  onclick="javascript:if(confirm('Are you sure you want to leave this page?')) history.back()">Cancel</button>                              
 				</div>
 			</div>
 		</div>

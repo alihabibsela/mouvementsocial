@@ -51,7 +51,7 @@ $records = Finance_statement::select($condition);
 				<i class="fa fa-angle-down"></i>
 				</a>
 				<div id="sample_2_column_toggler" class="dropdown-menu hold-on-click dropdown-checkboxes pull-right">
-<label><input type="checkbox" checked data-column="0">ID</label><label><input type="checkbox" checked data-column="<?php echo "1";?>"><?php echo "Year";?></label><label><input type="checkbox" checked data-column="<?php echo "2";?>"><?php echo "File an";?></label><label><input type="checkbox" checked data-column="<?php echo "3";?>"><?php echo "File en";?></label><label><input type="checkbox" checked data-column="<?php echo "4";?>"><?php echo "File fr";?></label>
+<label><input type="checkbox" checked data-column="0">ID</label><label><input type="checkbox" checked data-column="<?php echo "1";?>"><?php echo "Year";?></label><label><input type="checkbox" checked data-column="<?php echo "2";?>"><?php echo "File an";?></label><label><input type="checkbox" checked data-column="<?php echo "3";?>"><?php echo "File en";?></label><label><input type="checkbox" checked data-column="<?php echo "4";?>"><?php echo "File fr";?></label><label><input type="checkbox" checked data-column="<?php echo "5";?>"><?php echo "Finance id";?></label>
 				</div>
 			</div>
 			<div class="btn-group" >
@@ -70,6 +70,7 @@ $records = Finance_statement::select($condition);
 <th><?php echo "File an";?></th>
 <th><?php echo "File en";?></th>
 <th><?php echo "File fr";?></th>
+<th><?php echo "Title En";?></th>
 <th></th>
 <th></th>
 
@@ -88,6 +89,7 @@ $records = Finance_statement::select($condition);
 <td><?php echo substr(strip_tags($finance_statement->file_an), 0, 30); if(strlen($finance_statement->file_an) > 30) echo "...";  ?></td>
 <td><?php echo substr(strip_tags($finance_statement->file_en), 0, 30); if(strlen($finance_statement->file_en) > 30) echo "...";  ?></td>
 <td><?php echo substr(strip_tags($finance_statement->file_fr), 0, 30); if(strlen($finance_statement->file_fr) > 30) echo "...";  ?></td>
+<td><?php echo substr(strip_tags($finance_statement->title_en), 0, 30); if(strlen($finance_statement->title_en) > 30) echo "...";  ?></td>
 
 					<td>
 						<a class="btn btn-xs yellow" href="edit_finance_statement.php?id=<?php echo $finance_statement->finance_statement_id?>">

@@ -8,6 +8,12 @@ include "file_uploader.php";
 include "resize.php";
 
 extract($_POST);
+$file_ar=file_uploader("file_ar", $fileTypes, $filesPath);
+
+$file_en=file_uploader("file_en", $fileTypes, $filesPath);
+
+$file_fr=file_uploader("file_fr", $fileTypes, $filesPath);
+
 $image=upload_image("image","$imagesPath");
 if(is_file($imagesPath.$image)){
 $simpleImage->load($imagesPath.$image);
@@ -18,15 +24,10 @@ $simpleImage->save($imagesPath."small_".$image);
 }else{
 $image="";
 }
-$file_ar=file_uploader("file_ar", $fileTypes, $filesPath);
-
-$file_en=file_uploader("file_en", $fileTypes, $filesPath);
-
-$file_fr=file_uploader("file_fr", $fileTypes, $filesPath);
 
 
 
-$return = Publication::save( addslashes($publication_id),  addslashes($title_ar),  addslashes($title_en),  addslashes($title_fr),  addslashes($details_ar),  addslashes($details_en),  addslashes($details_fr),  addslashes($file_ar),  addslashes($file_en),  addslashes($file_fr),  addslashes($image));
+$return = Publication::save( addslashes($publication_id),  addslashes($title_ar),  addslashes($title_en),  addslashes($title_fr),  addslashes($details_ar),  addslashes($details_en),  addslashes($details_fr),  addslashes($file_ar),  addslashes($file_en),  addslashes($file_fr),  addslashes($image),  addslashes($publication_category_id));
 	if($return == true){
 		$act=1;
 	}else{

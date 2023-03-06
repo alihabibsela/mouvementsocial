@@ -1,4 +1,4 @@
-<?php
+<?php 
 require "session_start.php";
 
 include "connect.php";
@@ -7,32 +7,10 @@ include "class/Publication.php";
 include "change_format.php";
 
 include "file_uploader.php";
-
-require "session_start.php";
-
 include "resize.php";
 
 extract($_POST);
 
-$image=upload_image("image",$imagesPath);
-
-if(is_file($imagesPath.$image)){
-$publication=Publication::selectById($publication_id);
-
-
-if(is_file($imagesPath.$publication->image))
-{
-unlink($imagesPath.$publication->image);
-}
-
-$simpleImage->load($imagesPath.$image);
-$simpleImage->resizeToWidth($medImageW);
-$simpleImage->save($imagesPath."med_".$image);
-$simpleImage->resizeToWidth($smallImageW);
-$simpleImage->save($imagesPath."small_".$image);
-
-$return=Publication::updateCondition($publication_id, "image='$image'");if($return) $num++;
-}
 
 $file_ar=file_uploader("file_ar",$fileTypes,$filesPath);
 
@@ -70,9 +48,29 @@ $return=Publication::updateCondition($publication_id, "file_fr='$file_fr'");
 if($return) $num++;
 }
 
+$image=upload_image("image",$imagesPath);
+
+if(is_file($imagesPath.$image)){
+$publication=Publication::selectById($publication_id);
 
 
-$query = "title_ar='".addslashes(stripslashes($title_ar))."' ,title_en='".addslashes(stripslashes($title_en))."' ,title_fr='".addslashes(stripslashes($title_fr))."' ,details_ar='".addslashes(stripslashes($details_ar))."' ,details_en='".addslashes(stripslashes($details_en))."' ,details_fr='".addslashes(stripslashes($details_fr))."' ";
+if(is_file($imagesPath.$publication->image))
+{
+unlink($imagesPath.$publication->image);
+}
+
+$simpleImage->load($imagesPath.$image);
+$simpleImage->resizeToWidth($medImageW);
+$simpleImage->save($imagesPath."med_".$image);
+$simpleImage->resizeToWidth($smallImageW);
+$simpleImage->save($imagesPath."small_".$image);
+
+$return=Publication::updateCondition($publication_id, "image='$image'");if($return) $num++;
+}
+
+
+
+$query = "title_ar='".addslashes(stripslashes($title_ar))."' ,title_en='".addslashes(stripslashes($title_en))."' ,title_fr='".addslashes(stripslashes($title_fr))."' ,details_ar='".addslashes(stripslashes($details_ar))."' ,details_en='".addslashes(stripslashes($details_en))."' ,details_fr='".addslashes(stripslashes($details_fr))."' ,publication_category_id='".addslashes(stripslashes($publication_category_id))."' ";
 
 $return=Publication::updateCondition($publication_id, $query);
 if($return) $num++;
