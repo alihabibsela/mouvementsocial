@@ -350,7 +350,7 @@ if(isset($_REQUEST['act'])){
 						</li>
 						<li >
 							<a href="display_finance_statement.php">
-                            Finance Statement
+                            Finance Category
                             </a>
 						</li>
 					</ul>
@@ -359,6 +359,12 @@ if(isset($_REQUEST['act'])){
 					<a href="display_publication.php">
 					<i class="fa fa-sitemap"></i>
 					<span class="title">MS Library</span>
+					</a>
+				</li>
+				<li>
+					<a href="display_publication_category.php">
+					<i class="fa fa-sitemap"></i>
+					<span class="title">MS Library Category</span>
 					</a>
 				</li>
                 <li>
