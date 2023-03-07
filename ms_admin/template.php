@@ -345,12 +345,12 @@ if(isset($_REQUEST['act'])){
 					<ul class="sub-menu">
 						<li >
 							<a href="display_finance.php">
-                                All Finance
+                                Finance Category
                             </a>
 						</li>
 						<li >
 							<a href="display_finance_statement.php">
-                            Finance Category
+                            Finance Statement
                             </a>
 						</li>
 					</ul>
