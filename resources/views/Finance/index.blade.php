@@ -171,14 +171,22 @@
                 <div class="row mt-5">
                     <?php $setFinanceStatement=0;?>
                     @foreach ($Finance as $key=>$value)
-                        @if($key==2)
                         <?php $setFinanceStatement=1;?>
-                            <div class="col-md-4 col-12" style="padding-bottom: 8px;">
+                            <div class="col-md-4 col-12" style="padding-bottom: 30px;">
                                 <div class="statment-by-year">
                                     <h3>
-                                        <?=$_SESSION["lng"]=="ar"?"تقرير سنوي":($_SESSION["lng"]=="fr"?"Rapport annuel":"Annual Report")?>
+                                       <?php 
+                                        $finance_title=$value->title_en;
+                                        if($_SESSION["lng"]=="ar"){
+                                            $finance_title=$value->title_ar;
+                                        }else if($_SESSION["lng"]=="fr"){
+                                            $finance_title=$value->title_fr;
+                                        }
+                                        echo $finance_title;
+                                       ?>
                                     </h3>
                                     <ul class="scroll">
+                                        <?php $FinanceStatement=\App\Models\FinanceStatement::select('*')->where('finance_id', $value->finance_id)->OrderByDesc("year")->get();?>
                                         @foreach ($FinanceStatement as $item)
                                             <?php
                                             $file=$item->file_en;
@@ -194,16 +202,6 @@
                                     </ul>
                                 </div>
                             </div>
-                        @endif
-                        <div class="col-md-4 col-12" style="padding-bottom: 8px;">
-                            <div class="gallery-card">
-                                <img src="uploads/images/{{$value->image}}" class="img-fluid" alt="">
-                                <div class="gallery-content">
-                                    <a href="uploads/images/{{$value->image}}" class="img-popup" aria-label="open image"><i class="fal fa-plus"></i></a>
-                                </div>
-                                <p class="text-center"><?=$_SESSION["lng"]=="ar"?$value->title_ar:($_SESSION["lng"]=="fr"?$value->title_fr:$value->title_en)?></p>
-                            </div>
-                        </div>
                     @endforeach
                     @if ($setFinanceStatement==0)
                         <div class="col-md-4 col-12" style="padding-bottom: 8px;">

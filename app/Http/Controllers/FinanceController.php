@@ -24,17 +24,14 @@ class FinanceController extends Controller
         HomeController::SetDefaultLng();
         $pages=Page::with('banners')->OrderBy("page_id")->whereIn("page_id",[10])->get()->first();
         $Finance=Finance::select('*')->OrderBy("orders")->OrderByDesc("finance_id")->get();
-        $FinanceStatement=FinanceStatement::select('*')->OrderByDesc("year")->get();
         $ContactUs=ContactUs::select('*')->get()->first();
         $Contactpages=Page::with('banners')->OrderBy("page_id")->whereIn("page_id",[16])->get()->first();
         $ProgramsCategory=ProgramsCategory::select('*')->where('active',1)->OrderBy("orders")->OrderByDesc("programs_category_id")->get();
 
-        return view('Finance/index',["pages"=>$pages,"Finance"=>$Finance,"FinanceStatement"=>$FinanceStatement,
+        return view('Finance/index',["pages"=>$pages,"Finance"=>$Finance,
         "ContactUs"=>$ContactUs,
         "Contactpages"=>$Contactpages,
         "ProgramsCategoryMenu"=> $ProgramsCategory]);
     }
 
 }
-
-?>
